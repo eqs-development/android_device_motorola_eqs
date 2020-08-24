@@ -98,6 +98,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/android.hardware.sensors@2.1-service-multihal.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.sensors@2.1-service-multihal.rc \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
+# Touch
+# PowerShare
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.eqs
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
