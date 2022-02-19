@@ -572,7 +572,6 @@ vendor/etc/sensors/config/waipio_default_sensors.json
 vendor/etc/sensors/config/waipio_dynamic_sensors.json
 vendor/etc/sensors/config/waipio_irq.json
 vendor/etc/sensors/config/waipio_power_0.json
-vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sns_reg_config
 
 # Thermal engine - configs
