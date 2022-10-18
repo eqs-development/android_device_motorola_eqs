@@ -5,3 +5,4 @@ touchscreen_mmi.ko
 mmi_annotate.ko
 mmi_info.ko
 goodix_brl_mmi.ko
+stmicro_mmi.ko

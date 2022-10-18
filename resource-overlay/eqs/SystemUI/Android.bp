@@ -1,5 +1,5 @@
 runtime_resource_overlay {
-    name: "SystemUIResDubai",
+    name: "SystemUIResEqs",
     sdk_version: "current",
     vendor: true
 }

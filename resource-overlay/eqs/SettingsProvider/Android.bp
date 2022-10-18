@@ -1,5 +1,5 @@
 runtime_resource_overlay {
-    name: "FrameworksResDubai",
+    name: "SettingsProviderResEqs",
     sdk_version: "current",
     vendor: true
 }
