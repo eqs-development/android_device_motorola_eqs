@@ -70,7 +70,7 @@
          This array should be equal in size to config_screenBrightnessBacklight. -->
     <array name="config_screenBrightnessBacklight">
         <item>0</item>
-        <item>1</item>
+        <item>3</item>
         <item>4</item>
         <item>5</item>
         <item>6</item>
@@ -92,7 +92,7 @@
          This array should be equal in size to config_screenBrightnessBacklight -->
     <array name="config_screenBrightnessNits">
         <item>0</item>
-        <item>2</item>
+        <item>5</item>
         <item>7</item>
         <item>10</item>
         <item>12</item>
@@ -197,11 +197,11 @@
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
     <!-- The properties of a UDFPS sensor in pixels, in the order listed below: -->
-    <integer-array name="config_udfps_sensor_props" translatable="false" >
+    <array name="config_udfps_sensor_props" translatable="false" >
         <item>540</item> <!-- sensorLocationX -->
         <item>2164</item> <!-- sensorLocationY -->
         <item>91</item> <!-- sensorRadius -->
-    </integer-array>
+    </array>
 
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
@@ -210,40 +210,7 @@
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
-    <integer name="config_screenBrightnessSettingMinimum">2</integer>
-
-    <!-- Vibrator pattern for feedback about a long screen/key press -->
-    <array name="config_longPressVibePattern">
-        <item>0</item>
-        <item>67</item>
-    </array>
-
-    <!-- Vibrator pattern for feedback about touching a virtual key -->
-    <array name="config_virtualKeyVibePattern">
-        <item>0</item>
-        <item>67</item>
-    </array>
-
-    <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
-    <array name="config_keyboardTapVibePattern">
-        <item>0</item>
-        <item>30</item>
-    </array>
-
-    <!-- Vibrator pattern for feedback about booting with safe mode enabled -->
-    <array name="config_safeModeEnabledVibePattern">
-        <item>0</item>
-        <item>0</item>
-        <item>94</item>
-    </array>
-
-    <!-- Vibrator pattern for feedback about hitting a scroll barrier -->
-    <array name="config_scrollBarrierVibePattern">
-        <item>0</item>
-        <item>15</item>
-        <item>30</item>
-        <item>15</item>
-    </array>
+    <integer name="config_screenBrightnessSettingMinimum">1</integer>
 
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
@@ -286,15 +253,15 @@
 
     <!-- Not allow to switch to higher refresh rate when (display, ambient) brightness falls into
          the region defined by the two arrays -->
-    <integer-array name="config_brightnessThresholdsOfPeakRefreshRate">
-        <item>72</item>
-    </integer-array>
-    <integer-array name="config_ambientThresholdsOfPeakRefreshRate">
+    <array name="config_brightnessThresholdsOfPeakRefreshRate">
+        <item>50</item>
+    </array>
+    <array name="config_ambientThresholdsOfPeakRefreshRate">
         <item>-1</item>
-    </integer-array>
+    </array>
 
     <!-- MMS user agent string -->
-    <string name="config_mms_user_agent" translatable="false">motorolaedge30</string>
+    <string name="config_mms_user_agent" translatable="false">motorolaedge30ultra</string>
     <!-- MMS user agent profile url -->
     <string name="config_mms_user_agent_profile_url" translatable="false">http://uaprof.motorola.com/phoneconfig/motov1/Profile/motov1.rdf</string>
 
@@ -308,7 +275,4 @@
 
     <!-- How long it takes for the HW to start illuminating after the illumination is requested. -->
     <integer name="config_udfps_illumination_transition_ms">0</integer>
-
-    <!-- Type of the double tap sensor. Empty if double tap is not supported. -->
-    <string name="config_dozeDoubleTapSensorType" translatable="false">org.lineageos.sensor.double_tap</string>
 </resources>
