@@ -267,6 +267,11 @@
                 </devicePort>
                 <devicePort tagName="USB Headset In" type="AUDIO_DEVICE_IN_USB_HEADSET" role="source">
                 </devicePort>
+                <devicePort tagName="A2DP In" type="AUDIO_DEVICE_IN_BLUETOOTH_A2DP" role="source"
+                            encodedFormats="AUDIO_FORMAT_LC3">
+                   <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                            samplingRates="44100 48000" channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
+                </devicePort>
             </devicePorts>
             <!-- route declaration, i.e. list all available sources for a given sink -->
             <routes>
@@ -312,7 +317,7 @@
         </module>
 
         <!-- A2dp Audio HAL -->
-        <xi:include href="a2dp_in_audio_policy_configuration.xml"/>
+        <!--<xi:include href="a2dp_in_audio_policy_configuration.xml"/>-->
 
         <!-- Usb Audio HAL -->
         <xi:include href="usb_audio_policy_configuration.xml"/>
