@@ -21,6 +21,7 @@
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 #include <com/motorola/hardware/biometric/fingerprint/1.0/IMotoFingerPrint.h>
+#include <com/motorola/hardware/display/panel/1.1/IDisplayPanel.h>
 
 namespace android {
 namespace hardware {
@@ -43,6 +44,10 @@ using ::com::motorola::hardware::biometric::fingerprint::V1_0::IMotoFingerPrint;
 using ::com::motorola::hardware::biometric::fingerprint::V1_0::IMotFodEventType;
 using ::com::motorola::hardware::biometric::fingerprint::V1_0::IMotFodEventResult;
 
+using ::com::motorola::hardware::display::panel::V1_1::IDisplayPanel;
+using ::com::motorola::hardware::display::panel::V1_0::PanelColor;
+using ::com::motorola::hardware::display::panel::V1_0::PanelMode;
+
 struct BiometricsFingerprint : public IBiometricsFingerprint {
     BiometricsFingerprint();
     // Methods from ::V2_1::IBiometricsFingerprint follow.
@@ -63,8 +68,15 @@ struct BiometricsFingerprint : public IBiometricsFingerprint {
     Return<void> onFingerUp() override;
 
 private:
+    void disableHighBrightFod();
+    void enableHighBrightFod();
+
+    bool hbmFodEnabled;
+    std::mutex mSetHbmFodMutex;
+
     sp<IBiometricsFingerprint_2_1> biometrics_2_1_service;
     sp<IMotoFingerPrint> mMotoFingerprint;
+    sp<IDisplayPanel> displayPanelService;
 };
 
 }  // namespace implementation
