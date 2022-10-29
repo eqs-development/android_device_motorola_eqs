@@ -43,11 +43,6 @@ on early-boot
     chmod 0664 /sys/class/power_supply/battery/device/force_charging_enable
     chown vendor_tcmd system /sys/class/power_supply/battery/device/force_charging_enable
 
-on post-fs
-    # Sensors
-    chown system system /sys/devices/platform/soc/a94000.spi/spi_master/spi0/spi0.0/touchscreen/primary/double_tap_enabled
-    chown system system /sys/devices/platform/soc/a94000.spi/spi_master/spi0/spi0.0/touchscreen/primary/double_tap_pressed
-
 on post-fs-data
     # Param updater data for various modules
     mkdir /data/vendor/param 0775 system system
