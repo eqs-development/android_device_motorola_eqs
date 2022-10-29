@@ -98,11 +98,8 @@ class InputEventDT2WSensor : public OneShotSensor {
     virtual ~InputEventDT2WSensor() override;
 
     virtual void activate(bool enable) override;
-    virtual void activate(bool enable, bool notify, bool lock);
-    virtual void writeEnable(bool enable);
     virtual void setOperationMode(OperationMode mode) override;
     virtual std::vector<Event> readEvents() override;
-    virtual void fillEventData(Event& event);
 
   protected:
     virtual void run() override;
@@ -112,9 +109,9 @@ class InputEventDT2WSensor : public OneShotSensor {
   private:
     void interruptPoll();
 
-    struct pollfd mPolls[3];
+    struct pollfd mPolls[2];
     int mWaitPipeFd[2];
-    int mPollFds[2];
+    int mPollFds[1];
 };
 
 }  // namespace implementation
