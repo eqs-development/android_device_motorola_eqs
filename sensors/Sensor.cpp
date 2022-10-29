@@ -22,7 +22,6 @@
 
 #include <chrono>
 #include <cmath>
-#include <linux/input.h>
 
 static bool readEvent(int fd, struct input_event *event) {
     int rc;
@@ -227,24 +226,21 @@ OneShotSensor::OneShotSensor(int32_t sensorHandle, ISensorsEventCallback* callba
     mSensorInfo.flags |= SensorFlagBits::ONE_SHOT_MODE;
 }
 
-#define INPUT_DT2W_SENSOR_PATH "/dev/input/event10"
-#define INPUT_TOUCHSCREEN_PATH "/dev/input/event11"
-
-#define GESTURE_PATH "/sys/class/touchscreen/primary/gesture"
-
-InputEventDT2WSensor::InputEventDT2WSensor(
-    int32_t sensorHandle, ISensorsEventCallback* callback)
+InputEventOneShotSensor::InputEventOneShotSensor(
+    int32_t sensorHandle, ISensorsEventCallback* callback, const std::string& pollPath,
+    const std::string& enablePath, int enableValue, short keyValue, const std::string& name,
+    const std::string& typeAsString, SensorType type)
     : OneShotSensor(sensorHandle, callback) {
-    mSensorInfo.name = "DT2W sensor";
-    mSensorInfo.type = static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 1);
-    mSensorInfo.typeAsString = "org.lineageos.sensor.dt2w";
+    mSensorInfo.name = name;
+    mSensorInfo.type = type;
+    mSensorInfo.typeAsString = typeAsString;
     mSensorInfo.maxRange = 2048.0f;
     mSensorInfo.resolution = 1.0f;
     mSensorInfo.power = 0;
     mSensorInfo.flags |= SensorFlagBits::WAKE_UP;
 
     std::ofstream mGestureEnable;
-    mGestureEnable.open(GESTURE_PATH);
+    mGestureEnable.open(enablePath);
 
     if(!mGestureEnable) {
         ALOGE("could not open gesture path");
@@ -252,7 +248,7 @@ InputEventDT2WSensor::InputEventDT2WSensor(
         return;
     }
 
-    mGestureEnable << "49" << std::flush;
+    mGestureEnable << enableValue << std::flush;
 
     int rc;
 
@@ -263,7 +259,7 @@ InputEventDT2WSensor::InputEventDT2WSensor(
         ALOGE("failed to open wait pipe: %d", rc);
     }
 
-    mPollFds[0] = open(INPUT_DT2W_SENSOR_PATH, O_RDONLY | O_NONBLOCK);
+    mPollFds[0] = open(pollPath.c_str(), O_RDONLY | O_NONBLOCK);
     if (mPollFds[0] < 0) {
         ALOGE("failed to open poll fd: %d", mPollFds[0]);
     }
@@ -282,15 +278,17 @@ InputEventDT2WSensor::InputEventDT2WSensor(
         .fd = mPollFds[0],
         .events = POLLIN,
     };
+
+    mKeyValue = keyValue;
 }
 
-InputEventDT2WSensor::~InputEventDT2WSensor() {
+InputEventOneShotSensor::~InputEventOneShotSensor() {
     interruptPoll();
 }
 
-void InputEventDT2WSensor::activate(bool enable) {
+void InputEventOneShotSensor::activate(bool enable) {
     std::lock_guard<std::mutex> lock(mRunMutex);
-
+    ALOGE("Activated for key %d", mKeyValue);
     if (mIsEnabled != enable) {
         mIsEnabled = enable;
         interruptPoll();
@@ -298,12 +296,12 @@ void InputEventDT2WSensor::activate(bool enable) {
     }
 }
 
-void InputEventDT2WSensor::setOperationMode(OperationMode mode) {
+void InputEventOneShotSensor::setOperationMode(OperationMode mode) {
     Sensor::setOperationMode(mode);
     interruptPoll();
 }
 
-void InputEventDT2WSensor::run() {
+void InputEventOneShotSensor::run() {
     std::unique_lock<std::mutex> runLock(mRunMutex);
 
     while (!mStopThread) {
@@ -326,7 +324,7 @@ void InputEventDT2WSensor::run() {
             }
 
             if((mPolls[1].revents == mPolls[1].events) && readEvent(mPolls[1].fd, &event)) {
-                if(event.type == EV_KEY && event.value == 1 && event.code == KEY_F4) {
+                if(event.type == EV_KEY && event.value == 1 && event.code == mKeyValue) {
                     mIsEnabled = false;
                     mCallback->postEvents(readEvents(), isWakeUpSensor());
                 }
@@ -337,21 +335,25 @@ void InputEventDT2WSensor::run() {
     }
 }
 
-void InputEventDT2WSensor::interruptPoll() {
+void InputEventOneShotSensor::interruptPoll() {
     if (mWaitPipeFd[1] < 0) return;
 
     char c = '1';
     write(mWaitPipeFd[1], &c, sizeof(c));
 }
 
-std::vector<Event> InputEventDT2WSensor::readEvents() {
+void InputEventOneShotSensor::fillEventData(Event& event) {
+    event.u.data[0] = 0;
+    event.u.data[1] = 0;
+}
+
+std::vector<Event> InputEventOneShotSensor::readEvents() {
     std::vector<Event> events;
     Event event;
     event.sensorHandle = mSensorInfo.sensorHandle;
     event.sensorType = mSensorInfo.type;
     event.timestamp = ::android::elapsedRealtimeNano();
-    event.u.data[0] = 0;
-    event.u.data[1] = 0;
+    fillEventData(event);
     events.push_back(event);
     return events;
 }
