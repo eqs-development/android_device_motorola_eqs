@@ -496,6 +496,38 @@ vendor/lib64/libets_teeclient_v3.so
 vendor/lib64/vendor.egistec.hardware.fingerprint@4.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
+# MotCamera3
+product/app/MotCamera3AI/MotCamera3AI.apk;PRESIGNED
+product/etc/permissions/com.motorola.camera3.xml
+product/etc/permissions/deviceowner-configuration-com.motorola.camera3.xml
+product/etc/permissions/privapp-permissions-com.motorola.camera3.xml
+product/etc/sysconfig/hiddenapi-whitelist-com.motorola.camera3.xml
+product/priv-app/MotCamera4/MotCamera4.apk;PRESIGNED
+-system/app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
+system/etc/permissions/com.motorola.motosignature.xml
+system/etc/permissions/moto-core_services.xml
+system/etc/permissions/moto-settings.xml
+system/framework/com.motorola.motosignature.jar
+system/framework/moto-core_services.jar
+system/framework/moto-settings.jar
+system_ext/bin/motsettings
+system_ext/etc/permissions/com.motorola.androidx.camera.extensions.xml
+system_ext/framework/com.motorola.androidx.camera.extensions.jar
+system_ext/etc/public.libraries-motocamera.txt
+system_ext/lib/libmcf_native_window_helper.motocamera.so
+system_ext/lib64/libmcf_native_window_helper.motocamera.so
+-system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk
+
+# Moto Permissions
+product/etc/permissions/com.motorola.camera3.xml:vendor/etc/permissions/com.motorola.camera3.xml
+product/etc/permissions/com.motorola.camera3.content.ai.xml:vendor/etc/permissions/com.motorola.camera3.content.ai.xml
+product/etc/permissions/com.motorola.camera3.eqs.xml:vendor/etc/permissions/com.motorola.camera3.eqs.xml
+product/etc/permissions/com.motorola.camera3.lens.xml:vendor/etc/permissions/com.motorola.camera3.lens.xml
+product/etc/permissions/com.motorola.moto-uirefresh.xml
+product/etc/permissions/com.motorola.motodisplay.xml
+product/etc/permissions/privapp-permissions-com.motorola.motodisplay.xml
+system_ext/etc/permissions/com.motorola.androidx.camera.extensions.xml:vendor/etc/permissions/com.motorola.androidx.camera.extensions.xml
+
 # NFC - configs
 vendor/etc/libnfc-hal-st.conf
 vendor/etc/libnfc-hal-st54j.conf
