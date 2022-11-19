@@ -33,7 +33,7 @@ PRODUCT_MODEL := motorola edge 30 ultra
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_PRODUCT=eqs_g \
-    PRIVATE_BUILD_DESC="eqs_ge-user 12 S3SQ32.16-53-9 d68d4-cb5c2 release-keys"
+    TARGET_PRODUCT=eqs_ge \
+    PRIVATE_BUILD_DESC="eqs_ge-user 12 S3SQ32.16-53-13 c486e-220b5b release-keys"
 
-BUILD_FINGERPRINT := motorola/eqs_g/msi:12/S3SQ32M.16-53-9/cb5c2:user/release-keys
+BUILD_FINGERPRINT := motorola/eqs_ge/msi:12/S3SQ32M.16-53-13/c486e-220b5b:user/release-keys
