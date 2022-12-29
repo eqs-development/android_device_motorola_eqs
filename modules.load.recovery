@@ -317,12 +317,7 @@ qrtr-mhi.ko
 qrtr-gunyah.ko
 msm_drm.ko
 msm-mmrm.ko
-altmode-glink.ko
-dwc3-msm.ko
-gh_irq_lend.ko
-gh_mem_notifier.ko
 goodix_brl_mmi.ko
-hdcp_qseecom.ko
 mmi_annotate.ko
 mmi_info.ko
 mmi_relay.ko
