@@ -214,12 +214,7 @@ snd-usb-audio-qmi.ko
 qrtr-smd.ko
 qrtr-mhi.ko
 qrtr-gunyah.ko
-qca_cld3_qca6490.ko
-qca_cld3_qca6750.ko
-qca_cld3_kiwi.ko
-qca_cld3_qca6490.ko
-qca_cld3_qca6750.ko
-qca_cld3_kiwi.ko
+wlan.ko
 q6_notifier_dlkm.ko
 spf_core_dlkm.ko
 audpkt_ion_dlkm.ko
