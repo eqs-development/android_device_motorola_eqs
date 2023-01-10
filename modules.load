@@ -276,7 +276,6 @@ mmi_annotate.ko
 mmi_info.ko
 moto_f_usbnet.ko
 bm_adsp_ulog.ko
-watchdogtest.ko
 mmi_charger.ko
 moto_f_mass_storage.ko
 rbs_fod_mmi.ko
