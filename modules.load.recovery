@@ -322,5 +322,4 @@ mmi_annotate.ko
 mmi_info.ko
 mmi_relay.ko
 sensors_class.ko
-stmicro_mmi.ko
 touchscreen_mmi.ko

@@ -285,7 +285,6 @@ mmi_relay.ko
 sensors_class.ko
 sx937x_multi.ko
 touchscreen_mmi.ko
-stmicro_mmi.ko
 goodix_brl_mmi.ko
 qti_glink_charger.ko
 wl2868c.ko
