@@ -253,7 +253,6 @@ wcd937x_dlkm.ko
 wcd937x_slave_dlkm.ko
 hdmi_dlkm.ko
 camera.ko
-msm-cvp.ko
 gsim.ko
 ipam.ko
 ipanetm.ko
