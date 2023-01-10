@@ -31,7 +31,9 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/device_framework_ma
 DEVICE_MANIFEST_CAPE_FILES += $(DEVICE_PATH)/manifest_eqs.xml
 
 # Kernel
-TARGET_KERNEL_CONFIG += vendor/ext_config/moto-waipio-eqs.config
+TARGET_KERNEL_CONFIG += \
+	vendor/ext_config/moto-waipio-eqs.config \
+	vendor/ext_config/lineage-moto-waipio-eqs.config
 
 # Kernel Modules
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load))
