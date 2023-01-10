@@ -270,7 +270,6 @@ rmnet_sch.ko
 msm_drm.ko
 msm-eva.ko
 msm-mmrm.ko
-mmrm_test_module.ko
 msm_video.ko
 utags.ko
 mmi_annotate.ko
