@@ -41,8 +41,6 @@ void BiometricsFingerprint::disableHighBrightFod() {
     std::lock_guard<std::mutex> lock(mSetHbmFodMutex);
 
     if(!hbmFodEnabled) return;
-    // this is no mistake, setColor sets the PanelMode, while setMode sets the panel color
-    displayPanelService->setColor((PanelColor) PanelMode::PANEL_MODE_NORMAL);
     mMotoFingerprint->sendFodEvent(NOTIFY_FINGER_UP, {},
                 [](IMotFodEventResult, const hidl_vec<signed char>&) {});
 
@@ -53,8 +51,6 @@ void BiometricsFingerprint::enableHighBrightFod() {
     std::lock_guard<std::mutex> lock(mSetHbmFodMutex);
 
     if(hbmFodEnabled) return;
-    // this is no mistake, setColor sets the PanelMode, while setMode sets the panel color
-    displayPanelService->setColor((PanelColor) PanelMode::PANEL_MODE_HIGH_BRIGHT_FOD);
     mMotoFingerprint->sendFodEvent(NOTIFY_FINGER_DOWN, {},
                 [](IMotFodEventResult, const hidl_vec<signed char>&) {});
 
@@ -64,7 +60,6 @@ void BiometricsFingerprint::enableHighBrightFod() {
 BiometricsFingerprint::BiometricsFingerprint() {
     biometrics_2_1_service = IBiometricsFingerprint_2_1::getService();
     mMotoFingerprint = IMotoFingerPrint::getService();
-    displayPanelService = IDisplayPanel::getService();
 
     hbmFodEnabled = false;
 }
