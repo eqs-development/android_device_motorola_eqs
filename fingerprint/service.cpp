@@ -17,6 +17,7 @@
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.eqs"
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
+
 #include "BiometricsFingerprint.h"
 
 using android::hardware::configureRpcThreadpool;

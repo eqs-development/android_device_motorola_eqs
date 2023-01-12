@@ -17,15 +17,15 @@
 
 #include "BiometricsFingerprint.h"
 
-#include <chrono>
 #include <android-base/logging.h>
-#include <fstream>
-#include <cmath>
-#include <thread>
-
 #include <fcntl.h>
 #include <poll.h>
 #include <sys/stat.h>
+
+#include <chrono>
+#include <cmath>
+#include <fstream>
+#include <thread>
 
 #define NOTIFY_FINGER_UP IMotFodEventType::FINGER_UP
 #define NOTIFY_FINGER_DOWN IMotFodEventType::FINGER_DOWN
@@ -40,9 +40,11 @@ namespace implementation {
 void BiometricsFingerprint::disableHighBrightFod() {
     std::lock_guard<std::mutex> lock(mSetHbmFodMutex);
 
-    if(!hbmFodEnabled) return;
+    if (!hbmFodEnabled)
+        return;
+
     mMotoFingerprint->sendFodEvent(NOTIFY_FINGER_UP, {},
-                [](IMotFodEventResult, const hidl_vec<signed char>&) {});
+                                   [](IMotFodEventResult, const hidl_vec<signed char> &) {});
 
     hbmFodEnabled = false;
 }
@@ -50,9 +52,11 @@ void BiometricsFingerprint::disableHighBrightFod() {
 void BiometricsFingerprint::enableHighBrightFod() {
     std::lock_guard<std::mutex> lock(mSetHbmFodMutex);
 
-    if(hbmFodEnabled) return;
+    if (hbmFodEnabled)
+        return;
+
     mMotoFingerprint->sendFodEvent(NOTIFY_FINGER_DOWN, {},
-                [](IMotFodEventResult, const hidl_vec<signed char>&) {});
+                                   [](IMotFodEventResult, const hidl_vec<signed char> &) {});
 
     hbmFodEnabled = true;
 }
@@ -64,7 +68,8 @@ BiometricsFingerprint::BiometricsFingerprint() {
     hbmFodEnabled = false;
 }
 
-Return<uint64_t> BiometricsFingerprint::setNotify(const sp<IBiometricsFingerprintClientCallback>& clientCallback) {
+Return<uint64_t> BiometricsFingerprint::setNotify(
+    const sp<IBiometricsFingerprintClientCallback> &clientCallback) {
     return biometrics_2_1_service->setNotify(clientCallback);
 }
 
@@ -72,7 +77,8 @@ Return<uint64_t> BiometricsFingerprint::preEnroll() {
     return biometrics_2_1_service->preEnroll();
 }
 
-Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69>& hat, uint32_t gid, uint32_t timeoutSec) {
+Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69> &hat,
+                                                    uint32_t gid, uint32_t timeoutSec) {
     return biometrics_2_1_service->enroll(hat, gid, timeoutSec);
 }
 
@@ -98,7 +104,8 @@ Return<RequestStatus> BiometricsFingerprint::remove(uint32_t gid, uint32_t fid) 
     return biometrics_2_1_service->remove(gid, fid);
 }
 
-Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid, const hidl_string& storePath) {
+Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
+                                                            const hidl_string &storePath) {
     return biometrics_2_1_service->setActiveGroup(gid, storePath);
 }
 
