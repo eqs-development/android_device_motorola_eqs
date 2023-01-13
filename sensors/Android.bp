@@ -5,7 +5,7 @@
 //
 
 cc_library_shared {
-    name: "sensors.eqs",
+    name: "sensors.dubai",
     defaults: ["hidl_defaults"],
     srcs: [
         "Sensor.cpp",
@@ -16,7 +16,6 @@ cc_library_shared {
         "android.hardware.sensors@2.0",
         "android.hardware.sensors@2.0-ScopedWakelock",
         "android.hardware.sensors@2.1",
-        "libc",
         "libcutils",
         "libfmq",
         "libhardware",
@@ -30,7 +29,7 @@ cc_library_shared {
         "android.hardware.sensors@2.X-multihal",
     ],
     cflags: [
-        "-DLOG_TAG=\"sensors.eqs\"",
+        "-DLOG_TAG=\"sensors.dubai\"",
     ],
     vendor: true,
 }

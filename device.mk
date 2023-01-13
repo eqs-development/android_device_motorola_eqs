@@ -96,7 +96,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.eqs
+    sensors.dubai
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/android.hardware.sensors@2.1-service-multihal.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.sensors@2.1-service-multihal.rc \
