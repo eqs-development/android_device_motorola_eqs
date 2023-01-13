@@ -27,7 +27,6 @@
 #include <mutex>
 #include <thread>
 #include <vector>
-#include <linux/input.h>
 
 using ::android::hardware::sensors::V1_0::OperationMode;
 using ::android::hardware::sensors::V1_0::Result;
@@ -93,18 +92,14 @@ class OneShotSensor : public Sensor {
     virtual Result flush() override { return Result::BAD_VALUE; }
 };
 
-class InputEventOneShotSensor : public OneShotSensor {
+class InputEventDT2WSensor : public OneShotSensor {
   public:
-    InputEventOneShotSensor(int32_t sensorHandle, ISensorsEventCallback* callback,
-                            const std::string& pollPath, const std::string& enablePath,
-                            int enableValue, short keyValue, const std::string& name,
-                            const std::string& typeAsString, SensorType type);
-    virtual ~InputEventOneShotSensor() override;
+    InputEventDT2WSensor(int32_t sensorHandle, ISensorsEventCallback* callback);
+    virtual ~InputEventDT2WSensor() override;
 
     virtual void activate(bool enable) override;
     virtual void setOperationMode(OperationMode mode) override;
     virtual std::vector<Event> readEvents() override;
-    virtual void fillEventData(Event& event);
 
   protected:
     virtual void run() override;
@@ -117,31 +112,6 @@ class InputEventOneShotSensor : public OneShotSensor {
     struct pollfd mPolls[2];
     int mWaitPipeFd[2];
     int mPollFds[1];
-    short mKeyValue;
-};
-
-const std::string kDoubleTapInputEventPath = "/dev/input/event10";
-const std::string kGestureEnablePath = "/sys/class/touchscreen/primary/gesture";
-
-const int kEnableDt2w = 49;
-const int kEnableFodPressed = 17;
-
-class InputEventDT2WSensor : public InputEventOneShotSensor {
-  public:
-    InputEventDT2WSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
-        : InputEventOneShotSensor(
-            sensorHandle, callback, kDoubleTapInputEventPath,
-            kGestureEnablePath, kEnableDt2w, KEY_F4, "DT2W sensor",
-            "org.lineageos.sensor.dt2w", static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 1)) {}
-};
-
-class InputEventUdfpsSensor : public InputEventOneShotSensor {
-  public:
-    InputEventUdfpsSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
-        : InputEventOneShotSensor(
-            sensorHandle, callback, kDoubleTapInputEventPath,
-            kGestureEnablePath, kEnableFodPressed, KEY_F2, "UDFPS sensor",
-            "org.lineageos.sensor.udfps", static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 2)) {}
 };
 
 }  // namespace implementation
