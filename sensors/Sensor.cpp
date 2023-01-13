@@ -20,7 +20,6 @@
 #include <log/log.h>
 #include <utils/SystemClock.h>
 
-#include <chrono>
 #include <cmath>
 #include <linux/input.h>
 
@@ -267,8 +266,12 @@ InputEventDT2WSensor::InputEventDT2WSensor(
     if (mPollFds[0] < 0) {
         ALOGE("failed to open poll fd: %d", mPollFds[0]);
     }
+    mPollFds[1] = open(INPUT_TOUCHSCREEN_PATH, O_RDONLY | O_NONBLOCK);
+    if (mPollFds[1] < 0) {
+        ALOGE("failed to open poll fd: %d", mPollFds[1]);
+    }
 
-    if (mWaitPipeFd[0] < 0 || mWaitPipeFd[1] < 0 || mPollFds[0] < 0) {
+    if (mWaitPipeFd[0] < 0 || mWaitPipeFd[1] < 0 || mPollFds[0] < 0 || mPollFds[1] < 0) {
         mStopThread = true;
         return;
     }
@@ -282,6 +285,11 @@ InputEventDT2WSensor::InputEventDT2WSensor(
         .fd = mPollFds[0],
         .events = POLLIN,
     };
+
+    mPolls[2] = {
+        .fd = mPollFds[1],
+        .events = POLLIN,
+    };
 }
 
 InputEventDT2WSensor::~InputEventDT2WSensor() {
@@ -293,6 +301,7 @@ void InputEventDT2WSensor::activate(bool enable) {
 
     if (mIsEnabled != enable) {
         mIsEnabled = enable;
+
         interruptPoll();
         mWaitCV.notify_all();
     }
@@ -306,6 +315,14 @@ void InputEventDT2WSensor::setOperationMode(OperationMode mode) {
 void InputEventDT2WSensor::run() {
     std::unique_lock<std::mutex> runLock(mRunMutex);
 
+    long old_time = 0;
+    long new_time = 0;
+
+    int old_x = 0;
+    int new_x = 0;
+    int old_y = 0;
+    int new_y = 0;
+
     while (!mStopThread) {
         if (!mIsEnabled || mMode == OperationMode::DATA_INJECTION) {
             mWaitCV.wait(runLock, [&] {
@@ -314,7 +331,7 @@ void InputEventDT2WSensor::run() {
         } else {
             // Cannot hold lock while polling.
             runLock.unlock();
-            int rc = poll(mPolls, 2, -1);
+            int rc = poll(mPolls, 3, -1);
             runLock.lock();
 
             struct input_event event;
@@ -329,6 +346,24 @@ void InputEventDT2WSensor::run() {
                 if(event.type == EV_KEY && event.value == 1 && event.code == KEY_F4) {
                     mIsEnabled = false;
                     mCallback->postEvents(readEvents(), isWakeUpSensor());
+                }
+            } else if((mPolls[2].revents == mPolls[2].events) && readEvent(mPolls[2].fd, &event)) {
+                if(event.type == EV_KEY && event.value == 1) { // Touchscreen down/up
+                    old_time = new_time;
+                    new_time = event.time.tv_sec * 1000000 + event.time.tv_usec;
+                    if((new_time - old_time < 200000) && // 200ms
+                       (abs(sqrt(pow(old_x, 2) + pow(old_y, 2)) - sqrt(pow(new_x, 2) + pow(new_y, 2))) < 500)) {
+                        mIsEnabled = false;
+                        mCallback->postEvents(readEvents(), isWakeUpSensor());
+                    }
+                } else if(event.type == EV_ABS) { // send order: touch pos x -> touch y -> down/up
+                    if(event.code == ABS_MT_POSITION_X) {
+                        old_x = new_x;
+                        new_x = event.value;
+                    } else if (event.code == ABS_MT_POSITION_Y) {
+                        old_y = new_y;
+                        new_y = event.value;
+                    }
                 }
             } else if (mPolls[0].revents == mPolls[0].events) {
                 readBool(mWaitPipeFd[0], false /* seek */);
