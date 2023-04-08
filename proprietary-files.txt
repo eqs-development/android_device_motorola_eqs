@@ -4,8 +4,20 @@
 vendor/etc/acdbdata/waipio_mtp/MTP_acdb_cal.acdb
 vendor/etc/acdbdata/waipio_mtp/MTP_workspaceFile.qwsp
 
+# ADSP Modules
+vendor/lib/rfsa/adsp/libVppFrcQnnHtp.so
+vendor/lib/rfsa/adsp/libVppQnnHtp.so
+vendor/lib/rfsa/adsp/libmobilenet_dsp_frc.so
+vendor/lib/rfsa/adsp/libmobilenet_dsp_frc_networks.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libvpp_ais_networks.so
+vendor/lib/rfsa/adsp/libvpp_vqa_networks.so
+vendor/lib/rfsa/adsp/libvpt_action_recognition.so
+
 # Audio libraries
+vendor/lib/audio_algo.sst_component.so
 vendor/lib/libar-acdb.so
+vendor/lib64/audio_algo.sst_component.so
 vendor/lib64/libar-acdb.so
 
 # Camera
@@ -548,6 +560,12 @@ vendor/lib64/libets_teeclient_v3.so
 vendor/lib64/vendor.egistec.hardware.fingerprint@4.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
+# HotwordEnrollment
+-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk
+-product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
+system_ext/framework/com.android.hotwordenrollment.common.util.jar
+
 # MotCamera3
 product/app/MotCamera3AI/MotCamera3AI.apk;PRESIGNED
 product/etc/permissions/com.motorola.camera3.xml
@@ -609,6 +627,10 @@ vendor/firmware/st54j_fw.bin
 vendor/etc/vhw.xml
 
 # Sensors
+vendor/lib64/libflatbuffers-cpp_vendor.so
+vendor/lib64/libruy_vendor.so
+vendor/lib64/libtextclassifier_hash_vendor.so
+vendor/lib64/libtflite_vendor.so
 vendor/lib64/sensors.moto.so
 vendor/lib64/sensors.ssc.so
 
