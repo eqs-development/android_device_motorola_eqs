@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from 12-S3SQ32.16-72-31 a6724-80099 release-keys.
+# All unpinned blobs below are extracted from 12-S3SQS32.16-72-31-3 47c58c-b5d541 release-keys.
 
 # ACDB Data
 vendor/etc/acdbdata/waipio_mtp/MTP_acdb_cal.acdb
