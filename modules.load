@@ -133,7 +133,6 @@ i2c-dev.ko
 i3c-master-msm-geni.ko
 qcom_ipc_lite.ko
 synx-driver.ko
-radio-i2c-rtc6226-qca.ko
 qcom-pon.ko
 qti_battery_charger.ko
 qcom-spmi-temp-alarm.ko
