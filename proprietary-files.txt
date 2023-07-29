@@ -1,28 +1,26 @@
-# All unpinned blobs below are extracted from 12-S3SQS32.16-72-31-3 47c58c-b5d541 release-keys.
+# All unpinned blobs below are extracted from 13-T1SQ33.15-11-137-10 71a49-d8d2b release-keys.
 
 # ACDB Data
 vendor/etc/acdbdata/waipio_mtp/MTP_acdb_cal.acdb
 vendor/etc/acdbdata/waipio_mtp/MTP_workspaceFile.qwsp
 
 # ADSP Modules
-vendor/lib/rfsa/adsp/libSnpeHtpV68Skel.so
-vendor/lib/rfsa/adsp/libSnpeHtpV69Skel.so
-vendor/lib/rfsa/adsp/libVppFrcQnnHtp.so
-vendor/lib/rfsa/adsp/libVppQnnHtp.so
-vendor/lib/rfsa/adsp/libcalculator_skel.so
-vendor/lib/rfsa/adsp/libmobilenet_dsp_frc.so
-vendor/lib/rfsa/adsp/libmobilenet_dsp_frc_networks.so
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
-vendor/lib/rfsa/adsp/libsnpe_dsp_v65_domains_v2_skel.so
-vendor/lib/rfsa/adsp/libsnpe_dsp_v66_domains_v2_skel.so
-vendor/lib/rfsa/adsp/libvpp_ais_networks.so
-vendor/lib/rfsa/adsp/libvpp_vqa_networks.so
-vendor/lib/rfsa/adsp/libvpt_action_recognition.so
+vendor/lib/rfsa/adsp/libSnpeHtpV68Skel.so|b461a63a015852b115339f8efb84ef4f31e0887d
+vendor/lib/rfsa/adsp/libSnpeHtpV69Skel.so|a790452ac10ee4df333bc18eee59526e982ce9f0
+vendor/lib/rfsa/adsp/libVppFrcQnnHtp.so|9d6ba9f262f7f7454a48e8dce91cfd954de4d5ae
+vendor/lib/rfsa/adsp/libVppQnnHtp.so|395642f88fc67e94f667dba3d2c150242aa4e2da
+vendor/lib/rfsa/adsp/libcalculator_skel.so|1c27f497e8e101f25988fe9342210d95ecd5d594
+vendor/lib/rfsa/adsp/libmobilenet_dsp_frc.so|7080eaa88b0eb5b40cf0fab4e41217a5c85f289d
+vendor/lib/rfsa/adsp/libmobilenet_dsp_frc_networks.so|0c5c68374cbba2fe3c1671d5f84bca94bd6616bd
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so|396429c72bae75fcdf40e623d19e83b2c1e4969a
+vendor/lib/rfsa/adsp/libsnpe_dsp_v65_domains_v2_skel.so|994587bccb59fe55b70d7dc2c53f090bfd3b3576
+vendor/lib/rfsa/adsp/libsnpe_dsp_v66_domains_v2_skel.so|be83bd78e00bd3bce1a2659eea7daed649bf591e
+vendor/lib/rfsa/adsp/libvpp_ais_networks.so|351882bd70b4a0b530a80d906e53ebc14dde5f78
+vendor/lib/rfsa/adsp/libvpp_vqa_networks.so|8b86a3d8141745913ae0079481bef7248c8e5d02
+vendor/lib/rfsa/adsp/libvpt_action_recognition.so|ff8198eaab4dace8388dcaf876e471e75e098d0f
 
 # Audio libraries
-vendor/lib/audio_algo.sst_component.so
 vendor/lib/libar-acdb.so
-vendor/lib64/audio_algo.sst_component.so
 vendor/lib64/libar-acdb.so
 
 # Camera
@@ -571,10 +569,10 @@ vendor/lib64/vendor.egistec.hardware.fingerprint@4.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # HotwordEnrollment
--product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk
--product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk
+-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk|214e7e7d0486851f7619593f0ffe8fea2bac23d9
+-product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk|480c7b75e7308d0f52fbc03689ee095ddaad96a0
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
-system_ext/framework/com.android.hotwordenrollment.common.util.jar
+system_ext/framework/com.android.hotwordenrollment.common.util.jar|c764b636e0be426a66be09dd08ab9c1921327ef0
 
 # MotCamera3
 product/app/MotCamera3AI/MotCamera3AI.apk;PRESIGNED
@@ -591,11 +589,6 @@ system/framework/com.motorola.motosignature.jar
 system/framework/moto-core_services.jar
 system/framework/moto-settings.jar
 system_ext/bin/motsettings
-system_ext/etc/permissions/com.motorola.androidx.camera.extensions.xml
-system_ext/framework/com.motorola.androidx.camera.extensions.jar
-system_ext/etc/public.libraries-motocamera.txt
-system_ext/lib/libmcf_native_window_helper.motocamera.so
-system_ext/lib64/libmcf_native_window_helper.motocamera.so
 -system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk
 
 # Moto Permissions
@@ -606,7 +599,6 @@ product/etc/permissions/com.motorola.camera3.lens.xml:vendor/etc/permissions/com
 product/etc/permissions/com.motorola.moto-uirefresh.xml
 product/etc/permissions/com.motorola.motodisplay.xml
 product/etc/permissions/privapp-permissions-com.motorola.motodisplay.xml
-system_ext/etc/permissions/com.motorola.androidx.camera.extensions.xml:vendor/etc/permissions/com.motorola.androidx.camera.extensions.xml
 
 # NFC
 vendor/bin/hw/android.hardware.nfc@1.2-service.st
@@ -717,7 +709,7 @@ vendor/etc/thermal-engine.conf
 # Touchscreen firmware
 vendor/firmware/csot_goodix_cfg_group.bin
 vendor/firmware/csot_goodix_test_limits_255.csv
-vendor/firmware/goodix-csot-gt9916-2207161f-62de58cd-eqs.bin
-vendor/firmware/goodix-tianma-gt9916-2207161f-62de5b51-eqs.bin
+vendor/firmware/goodix-csot-gt9916-23021720-646772e8-eqs.bin
+vendor/firmware/goodix-tianma-gt9916-23021720-646772e8-eqs.bin
 vendor/firmware/tianma_goodix_cfg_group.bin
 vendor/firmware/tianma_goodix_test_limits_255.csv
