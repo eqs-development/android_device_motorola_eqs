@@ -34,6 +34,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=eqs_ge \
-    PRIVATE_BUILD_DESC="eqs_ge-user 13 T1SQ33.15-11-137-10 71a49-d8d2b release-keys"
+    PRIVATE_BUILD_DESC="eqs_ge-user 13 T1SQS33.15-11-137-10-2 71a49-f5e7b6 release-keys"
 
-BUILD_FINGERPRINT := motorola/eqs_ge/msi:13/T1SQ33.15-11-137-10/71a49-d8d2b:user/release-keys
+BUILD_FINGERPRINT := motorola/eqs_ge/msi:13/T1SQS33.15-11-137-10-2/71a49-f5e7b6:user/release-keys
