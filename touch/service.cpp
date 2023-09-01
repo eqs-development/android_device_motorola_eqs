@@ -34,7 +34,7 @@ int main() {
     android::hardware::configureRpcThreadpool(1, true /*callerWillJoin*/);
 
     if (highTouchPollingRate->registerAsService() != android::OK) {
-        LOG(ERROR) << "Cannot register touchscreen glove HAL service.";
+        LOG(ERROR) << "Cannot register touchscreen high touch polling HAL service.";
         return 1;
     }
 
