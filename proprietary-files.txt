@@ -19,15 +19,11 @@ vendor/lib/rfsa/adsp/libvpp_ais_networks.so|351882bd70b4a0b530a80d906e53ebc14dde
 vendor/lib/rfsa/adsp/libvpp_vqa_networks.so|8b86a3d8141745913ae0079481bef7248c8e5d02
 vendor/lib/rfsa/adsp/libvpt_action_recognition.so|ff8198eaab4dace8388dcaf876e471e75e098d0f
 
-# Audio libraries
-vendor/lib/libar-acdb.so
-vendor/lib64/libar-acdb.so
-
 # Camera
+vendor/bin/hw/vendor.qti.camera.provider@2.7-service_64
+vendor/etc/init/vendor.qti.camera.provider@2.7-service_64.rc
 vendor/etc/eva/facedetection/model3.dat
 vendor/etc/face3d/qcnn_concat_file_model-0324_2_encrypted
-vendor/etc/pwr/PowerFeatureConfig.xml
-vendor/etc/pwr/VideoPowerOptFeature.xml
 vendor/lib/camera/com.qti.ois.mot_bu63169.so
 vendor/lib/camera/fdconfigpreview.bin
 vendor/lib/camera/fdconfigpreviewlite.bin
@@ -58,8 +54,6 @@ vendor/lib/libcamera_nn_stub.so
 vendor/lib/libcamerapostproc.so
 vendor/lib/libchilog.so
 vendor/lib/libcom.qti.chinodeutils.so
-vendor/lib/libeva.so
-vendor/lib/libeva_util.so
 vendor/lib/libface3d_dev.so
 vendor/lib/libfcell.so
 vendor/lib/libhdr10plus.so
@@ -86,7 +80,6 @@ vendor/lib/libopencv3a.so
 vendor/lib/libopestriping.so
 vendor/lib/libos.so
 vendor/lib/libportrait_repair_ppl3_ocl.so
-vendor/lib/libpowercore.so
 vendor/lib/libqll.so
 vendor/lib/libqll10.so
 vendor/lib/libqllengine.so
@@ -98,7 +91,6 @@ vendor/lib/libsynx.so
 vendor/lib/libtfestriping.so
 vendor/lib/libthreadutils.so
 vendor/lib/libubifocus.so
-vendor/lib/libvideooptfeature.so
 vendor/lib/libvideoutils.so
 vendor/lib/libvidhance.so
 vendor/lib/vendor.qti.hardware.camera.aon@1.0-service-impl.so
@@ -157,8 +149,6 @@ vendor/lib64/libcamera_nn_stub.so
 vendor/lib64/libcamerapostproc.so
 vendor/lib64/libchilog.so
 vendor/lib64/libcom.qti.chinodeutils.so
-vendor/lib64/libeva.so
-vendor/lib64/libeva_util.so
 vendor/lib64/libeye_tracking_dsp_sample_stub.so
 vendor/lib64/libface3d_dev.so
 vendor/lib64/libfcell.so
@@ -189,7 +179,6 @@ vendor/lib64/libopestriping.so
 vendor/lib64/libos.so
 vendor/lib64/libportrait_repair_ppl3_ocl.so
 vendor/lib64/libportrait_repair_ppl3_ocl.so
-vendor/lib64/libpowercore.so
 vendor/lib64/libqll.so
 vendor/lib64/libqll10.so
 vendor/lib64/libqllengine.so
@@ -208,7 +197,6 @@ vendor/lib64/libthreadutils.so
 vendor/lib64/libtriplecam_optical_zoom_control.so
 vendor/lib64/libtriplecam_video_optical_zoom.so
 vendor/lib64/libubifocus.so
-vendor/lib64/libvideooptfeature.so
 vendor/lib64/libvidhance.so
 vendor/lib64/vendor.qti.hardware.camera.aon@1.0-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
