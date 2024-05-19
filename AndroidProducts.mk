@@ -16,8 +16,3 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_eqs.mk
-
-COMMON_LUNCH_CHOICES := \
-    lineage_eqs-user \
-    lineage_eqs-userdebug \
-    lineage_eqs-eng
