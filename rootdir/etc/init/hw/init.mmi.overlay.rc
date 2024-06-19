@@ -4,6 +4,7 @@ on early-init
    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor walt
    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor walt
    write /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor walt
+   exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -r -d /vendor/lib/modules zram
 
 on fs
    insmod /vendor/lib/modules/rbs_fod_mmi.ko
@@ -19,6 +20,9 @@ on fs
    insmod /vendor/lib/modules/qpnp_adaptive_charge.ko
    #zram wb
    mount_all /vendor/etc/fstab.qcom.zram --early
+
+on late-init
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules moto_mm moto_swap
 
 on early-boot
     # factory i2c
@@ -94,6 +98,10 @@ on boot
     chmod 0660 /sys/class/touchscreen/primary/sensitivity
     chown system system /sys/class/touchscreen/primary/gesture
     chmod 0660 /sys/class/touchscreen/primary/gesture
+
+    write /dev/cpuset/boost-app/cpus 4-6
+    setprop debug.sf.boost_sf_on_touch true
+
    # Set adaptive charging perms for HAL
     chown system system /sys/module/qpnp_adaptive_charge/parameters/upper_limit
     chown system system /sys/module/qpnp_adaptive_charge/parameters/lower_limit
@@ -134,8 +142,12 @@ on property:sys.boot_completed=1
     #change adsp pmic test command file access permission
     chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/tcmd
     chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl
+    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/addr
+    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/data
     chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/tcmd
     chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/addr
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/data
 
 #change for Rogue because the node changed
 on property:vendor.wifi.tethering=false

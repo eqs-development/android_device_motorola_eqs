@@ -98,6 +98,7 @@ qcom_rimps.ko
 c1dcvs_vendor.ko
 c1dcvs_scmi.ko
 bcl_pmic5.ko
+nfc_i2c.ko
 msm_sysstats.ko
 zsmalloc.ko
 lzo.ko
@@ -110,6 +111,7 @@ mhi_dev_netdev.ko
 mhi_dev_dtr.ko
 phy-qcom-ufs-qmp-v4-lahaina.ko
 phy-qcom-ufs-qmp-v4-parrot.ko
+phy-qcom-ufs-qmp-v4-anarok.ko
 phy-qcom-ufs-qmp-v3.ko
 phy-qcom-ufs-qmp-14nm.ko
 pinctrl-spmi-gpio.ko
@@ -175,6 +177,7 @@ icnss2.ko
 rimps_log.ko
 plh_scmi.ko
 gplaf_scmi.ko
+shared_rail_scmi.ko
 qdss_bridge.ko
 memlat.ko
 qcom_logbuf_vendor_hooks.ko
@@ -192,10 +195,9 @@ qcom_iommu_debug.ko
 lt9611uxc.ko
 msm_kgsl.ko
 zram.ko
-hdcp_qseecom.ko
+hdcp.ko
 qseecom-mod.ko
 qcom-i2c-pmic.ko
-nfc_i2c.ko
 sg.ko
 spi-msm-geni.ko
 spmi-pmic-arb-debug.ko
@@ -234,7 +236,7 @@ i3c-master-msm-geni.ko
 qcom_ipc_lite.ko
 synx-driver.ko
 qcom-pon.ko
-qti_battery_charger.ko
+qti_battery_charger_main.ko
 qcom-spmi-temp-alarm.ko
 qti-adc-tm.ko
 qti_qmi_sensor_v2.ko
@@ -259,6 +261,7 @@ leds-qti-tri-led.ko
 leds-qpnp-vibrator-ldo.ko
 plh_vendor.ko
 gplaf_vendor.ko
+shared_rail_vendor.ko
 tz_log.ko
 qce50.ko
 qcedev-mod.ko

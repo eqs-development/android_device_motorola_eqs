@@ -10,6 +10,7 @@ mhi_dev_netdev.ko
 mhi_dev_dtr.ko
 phy-qcom-ufs-qmp-v4-lahaina.ko
 phy-qcom-ufs-qmp-v4-parrot.ko
+phy-qcom-ufs-qmp-v4-anarok.ko
 phy-qcom-ufs-qmp-v3.ko
 phy-qcom-ufs-qmp-14nm.ko
 pinctrl-spmi-gpio.ko
@@ -75,6 +76,7 @@ icnss2.ko
 rimps_log.ko
 plh_scmi.ko
 gplaf_scmi.ko
+shared_rail_scmi.ko
 qdss_bridge.ko
 memlat.ko
 qcom_logbuf_vendor_hooks.ko
@@ -92,10 +94,9 @@ qcom_iommu_debug.ko
 lt9611uxc.ko
 msm_kgsl.ko
 zram.ko
-hdcp_qseecom.ko
+hdcp.ko
 qseecom-mod.ko
 qcom-i2c-pmic.ko
-nfc_i2c.ko
 sg.ko
 spi-msm-geni.ko
 spmi-pmic-arb-debug.ko
@@ -134,7 +135,7 @@ i3c-master-msm-geni.ko
 qcom_ipc_lite.ko
 synx-driver.ko
 qcom-pon.ko
-qti_battery_charger.ko
+qti_battery_charger_main.ko
 qcom-spmi-temp-alarm.ko
 qti-adc-tm.ko
 qti_qmi_sensor_v2.ko
@@ -159,6 +160,7 @@ leds-qti-tri-led.ko
 leds-qpnp-vibrator-ldo.ko
 plh_vendor.ko
 gplaf_vendor.ko
+shared_rail_vendor.ko
 tz_log.ko
 qce50.ko
 qcedev-mod.ko
@@ -213,7 +215,7 @@ snd-usb-audio-qmi.ko
 qrtr-smd.ko
 qrtr-mhi.ko
 qrtr-gunyah.ko
-wlan.ko
+qca_cld3_qca6490.ko
 q6_notifier_dlkm.ko
 spf_core_dlkm.ko
 audpkt_ion_dlkm.ko
@@ -233,6 +235,7 @@ swr_dmic_dlkm.ko
 wcd9xxx_dlkm.ko
 swr_haptics_dlkm.ko
 stub_dlkm.ko
+wsa881x_dlkm.ko
 machine_dlkm.ko
 lpass_cdc_wsa2_macro_dlkm.ko
 lpass_cdc_wsa_macro_dlkm.ko
@@ -241,12 +244,15 @@ lpass_cdc_rx_macro_dlkm.ko
 lpass_cdc_tx_macro_dlkm.ko
 lpass_cdc_dlkm.ko
 wsa883x_dlkm.ko
+aw882xx_dlkm.ko
+fs19xx_dlkm.ko
 wcd938x_dlkm.ko
 wcd938x_slave_dlkm.ko
 wcd937x_dlkm.ko
 wcd937x_slave_dlkm.ko
 hdmi_dlkm.ko
 camera.ko
+msm-cvp.ko
 gsim.ko
 ipam.ko
 ipanetm.ko
@@ -264,12 +270,14 @@ rmnet_sch.ko
 msm_drm.ko
 msm-eva.ko
 msm-mmrm.ko
+mmrm_test_module.ko
 msm_video.ko
 utags.ko
 mmi_annotate.ko
 mmi_info.ko
 moto_f_usbnet.ko
 bm_adsp_ulog.ko
+watchdogtest.ko
 mmi_charger.ko
 moto_f_mass_storage.ko
 rbs_fod_mmi.ko
@@ -279,8 +287,11 @@ mmi_relay.ko
 sensors_class.ko
 sx937x_multi.ko
 touchscreen_mmi.ko
+stmicro_mmi.ko
 goodix_brl_mmi.ko
 qti_glink_charger.ko
 wl2868c.ko
 mmi_sys_temp.ko
 qpnp_adaptive_charge.ko
+moto_mm.ko
+moto_swap.ko

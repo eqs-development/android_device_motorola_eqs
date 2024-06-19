@@ -18,6 +18,9 @@ on property:ro.vendor.hw.nfc=st && property:persist.vendor.radio.multisim.config
 on property:ro.vendor.hw.nfc=ese_st && property:persist.vendor.radio.multisim.config=*
 	start vendor.stflashtool
 
+on property:ro.vendor.hw.nfc=esim_st && property:persist.vendor.radio.multisim.config=*
+	start vendor.stflashtool
+
 service vendor.stflashtool /vendor/bin/STFlashTool -c /vendor/etc/st21nfc_conf.txt -P vendor.nfc.fw_status
 	group nfc
 	user nfc

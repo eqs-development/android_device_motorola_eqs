@@ -1,23 +1,23 @@
-# All unpinned blobs below are extracted from 13-T1SQ33.15-11-137-10-2 189fe0-f5e7b6 release-keys.
+# All unpinned blobs below are extracted from 14-U1SQS34.52-21-1-7 05c162-3a3ec6 release-keys.
 
 # ACDB Data
 vendor/etc/acdbdata/waipio_mtp/MTP_acdb_cal.acdb
 vendor/etc/acdbdata/waipio_mtp/MTP_workspaceFile.qwsp
 
 # ADSP Modules
-vendor/lib/rfsa/adsp/libSnpeHtpV68Skel.so|b461a63a015852b115339f8efb84ef4f31e0887d
-vendor/lib/rfsa/adsp/libSnpeHtpV69Skel.so|a790452ac10ee4df333bc18eee59526e982ce9f0
-vendor/lib/rfsa/adsp/libVppFrcQnnHtp.so|9d6ba9f262f7f7454a48e8dce91cfd954de4d5ae
-vendor/lib/rfsa/adsp/libVppQnnHtp.so|395642f88fc67e94f667dba3d2c150242aa4e2da
-vendor/lib/rfsa/adsp/libcalculator_skel.so|1c27f497e8e101f25988fe9342210d95ecd5d594
-vendor/lib/rfsa/adsp/libmobilenet_dsp_frc.so|7080eaa88b0eb5b40cf0fab4e41217a5c85f289d
-vendor/lib/rfsa/adsp/libmobilenet_dsp_frc_networks.so|0c5c68374cbba2fe3c1671d5f84bca94bd6616bd
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so|396429c72bae75fcdf40e623d19e83b2c1e4969a
-vendor/lib/rfsa/adsp/libsnpe_dsp_v65_domains_v2_skel.so|994587bccb59fe55b70d7dc2c53f090bfd3b3576
-vendor/lib/rfsa/adsp/libsnpe_dsp_v66_domains_v2_skel.so|be83bd78e00bd3bce1a2659eea7daed649bf591e
-vendor/lib/rfsa/adsp/libvpp_ais_networks.so|351882bd70b4a0b530a80d906e53ebc14dde5f78
-vendor/lib/rfsa/adsp/libvpp_vqa_networks.so|8b86a3d8141745913ae0079481bef7248c8e5d02
-vendor/lib/rfsa/adsp/libvpt_action_recognition.so|ff8198eaab4dace8388dcaf876e471e75e098d0f
+vendor/lib/rfsa/adsp/libSnpeHtpV68Skel.so
+vendor/lib/rfsa/adsp/libSnpeHtpV69Skel.so
+vendor/lib/rfsa/adsp/libVppFrcQnnHtp.so
+vendor/lib/rfsa/adsp/libVppQnnHtp.so
+vendor/lib/rfsa/adsp/libcalculator_skel.so
+vendor/lib/rfsa/adsp/libmobilenet_dsp_frc.so
+vendor/lib/rfsa/adsp/libmobilenet_dsp_frc_networks.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libsnpe_dsp_v65_domains_v2_skel.so
+vendor/lib/rfsa/adsp/libsnpe_dsp_v66_domains_v2_skel.so
+vendor/lib/rfsa/adsp/libvpp_ais_networks.so
+vendor/lib/rfsa/adsp/libvpp_vqa_networks.so
+vendor/lib/rfsa/adsp/libvpt_action_recognition.so
 
 # Camera
 vendor/bin/hw/vendor.qti.camera.provider@2.7-service_64
@@ -557,10 +557,10 @@ vendor/lib64/vendor.egistec.hardware.fingerprint@4.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # HotwordEnrollment
--product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk|214e7e7d0486851f7619593f0ffe8fea2bac23d9
--product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk|480c7b75e7308d0f52fbc03689ee095ddaad96a0
+-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk
+-product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
-system_ext/framework/com.android.hotwordenrollment.common.util.jar|c764b636e0be426a66be09dd08ab9c1921327ef0
+system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
 # MotCamera3
 product/app/MotCamera3AI/MotCamera3AI.apk;PRESIGNED
@@ -601,12 +601,15 @@ vendor/lib64/nfc_nci.st21nfc.st.so
 # NFC - configs
 vendor/etc/libnfc-hal-st.conf
 vendor/etc/libnfc-hal-st54j.conf
+vendor/etc/libnfc-hal-st54uicc.conf
 vendor/etc/libnfc-nci-st.conf
 vendor/etc/libse-gto-hal.conf
 vendor/etc/st21nfc_conf_ds.txt
 vendor/etc/st21nfc_conf_ss.txt
 vendor/etc/st54j_conf_ds.txt
 vendor/etc/st54j_conf_ss.txt
+vendor/etc/st54uicc_conf_ds.txt
+vendor/etc/st54uicc_conf_ss.txt
 
 # NFC firmware
 vendor/firmware/st21nfc_fw.bin
@@ -617,10 +620,17 @@ vendor/firmware/st54j_fw.bin
 vendor/etc/vhw.xml
 
 # Sensors
+vendor/bin/hw/motorola.hardware.sensorext-service
+vendor/etc/init/motorola.hardware.sensorext.service.rc
+vendor/etc/vintf/manifest/motorola.hardware.sensorext.service.xml
 vendor/lib64/libflatbuffers-cpp_vendor.so
 vendor/lib64/libruy_vendor.so
 vendor/lib64/libtextclassifier_hash_vendor.so
 vendor/lib64/libtflite_vendor.so
+vendor/lib64/motorola.hardware.sensors-V1-ndk_platform.so
+vendor/lib64/panel_als_comp_filter_eqs.so
+vendor/lib64/panel_als_comp_filter_eqs_csotc6.so
+vendor/lib64/panel_als_comp_filter_eqs_tianma.so
 vendor/lib64/sensors.moto.so
 vendor/lib64/sensors.ssc.so
 
@@ -701,3 +711,11 @@ vendor/firmware/goodix-csot-gt9916-23021720-646772e8-eqs.bin
 vendor/firmware/goodix-tianma-gt9916-23021720-646772e8-eqs.bin
 vendor/firmware/tianma_goodix_cfg_group.bin
 vendor/firmware/tianma_goodix_test_limits_255.csv
+
+# Venus firmware
+vendor/firmware/venus4mb.mbn
+vendor/firmware/venus_4mb_unsigned.mbn
+vendor/firmware/venus_4mb_v6.mbn
+vendor/firmware/venus_4mb_v7.mbn
+vendor/firmware/venus_v6.mbn
+vendor/firmware/venus_v7.mbn
