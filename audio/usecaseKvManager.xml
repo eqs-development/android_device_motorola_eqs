@@ -830,6 +830,12 @@
                 <!-- DEVICEPP_RX - DEVICEPP_RX_VOICE_DEFAULT -->
                 <graph_kv key="0xAC000000" value="0xAC000005"/>
             </keys_and_values>
+            <keys_and_values StreamType="PAL_STREAM_VOICE_CALL" CustomConfig="TTY">
+                <!-- DEVICERX - USB_RX -->
+                <graph_kv key="0xA2000000" value="0xA2000005"/>
+                <!-- DEVICEPP_RX - DEVICEPP_RX_VOICE_DEFAULT -->
+                <graph_kv key="0xAC000000" value="0xAC000005"/>
+            </keys_and_values>
         </devicepp>
         <!-- OUT Device Proxy DevicePPs -->
         <devicepp id="PAL_DEVICE_OUT_PROXY">
