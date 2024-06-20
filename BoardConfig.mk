@@ -34,8 +34,7 @@ ODM_MANIFEST_DNE_FILES := $(DEVICE_PATH)/manifest_eqs_ese.xml
 
 # Kernel
 TARGET_KERNEL_CONFIG += \
-	vendor/ext_config/moto-waipio-eqs.config \
-	vendor/ext_config/lineage-moto-waipio-eqs.config
+	vendor/ext_config/moto-waipio-eqs.config
 
 # Kernel Modules
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load))
@@ -44,6 +43,31 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/m
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules.blocklist.vendor_boot
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.recovery))
 BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
+
+TARGET_KERNEL_EXT_MODULES += \
+    motorola/drivers/mmi_annotate \
+    motorola/drivers/mmi_info \
+    motorola/drivers/power/bm_adsp_ulog \
+    motorola/drivers/power/mmi_charger \
+    motorola/drivers/power/qti_glink_charger \
+    motorola/drivers/power/qpnp_adaptive_charge \
+    motorola/drivers/misc/utag \
+    motorola/drivers/mmi_relay \
+    motorola/drivers/moto_f_mass_storage \
+    motorola/drivers/moto_f_usbnet \
+    motorola/drivers/misc/mmi_sys_temp \
+    motorola/drivers/watchdogtest \
+    motorola/drivers/regulator/wl2868c \
+    motorola/drivers/sensors \
+    motorola/drivers/misc/sx937x_multi \
+    motorola/drivers/input/touchscreen/touchscreen_mmi \
+    motorola/drivers/input/touchscreen/goodix_berlin_mmi \
+    motorola/drivers/input/touchscreen/stmicro_mmi \
+    motorola/drivers/input/misc/rbs_fod_mmi \
+    motorola/drivers/moto_mm \
+    motorola/drivers/moto_swap \
+    motorola/drivers/nfc/st21nfc \
+    motorola/drivers/ese/st54x
 
 # Partitions
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 228362006528
