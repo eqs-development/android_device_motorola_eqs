@@ -589,8 +589,8 @@ product/etc/permissions/com.motorola.moto-uirefresh.xml
 -vendor/bin/hw/android.hardware.nfc@1.2-service.st
 -vendor/bin/hw/android.hardware.secure_element@1.2-service-gto
 vendor/bin/STFlashTool
-vendor/etc/init/android.hardware.nfc@1.2-service.st.rc
-vendor/etc/init/android.hardware.secure_element@1.2-service-gto.rc
+vendor/etc/init/android.hardware.nfc@1.2-service.st.rc:vendor/etc/init/android.hardware.nfc@1.2-service.st-moto.rc
+vendor/etc/init/android.hardware.secure_element@1.2-service-gto.rc:vendor/etc/init/android.hardware.secure_element@1.2-service-gto-moto.rc
 -vendor/lib64/android.hardware.secure_element@1.0-impl-gto.so
 vendor/lib64/libstnfc-auth.so
 vendor/lib64/nfc_nci.st21nfc.st.so
