@@ -27,7 +27,6 @@ PRODUCT_AAPT_PREF_CONFIG := 400dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 BOARD_SHIPPING_API_LEVEL := 31
-BOARD_API_LEVEL := 31
 PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Inherit from motorola sm8475-common
