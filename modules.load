@@ -294,3 +294,4 @@ mmi_sys_temp.ko
 qpnp_adaptive_charge.ko
 moto_mm.ko
 moto_swap.ko
+gpio_keys.ko
