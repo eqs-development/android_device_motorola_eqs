@@ -571,10 +571,8 @@ product/priv-app/MotCamera4/MotCamera4.apk;PRESIGNED
 -system/app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
 system/etc/permissions/com.motorola.motosignature.xml
 system/etc/permissions/moto-core_services.xml
-system/etc/permissions/moto-settings.xml
 system/framework/com.motorola.motosignature.jar
 system/framework/moto-core_services.jar
-system/framework/moto-settings.jar
 system_ext/bin/motsettings
 -system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk
 
