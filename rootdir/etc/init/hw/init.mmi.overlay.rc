@@ -48,6 +48,7 @@ on early-boot
 
 on post-fs
     # Sensors
+    chown system system /sys/devices/platform/soc/990000.i2c/i2c-0/0-005d/touchscreen/primary/single_tap_enabled
     chown system system /sys/devices/platform/soc/990000.i2c/i2c-0/0-005d/touchscreen/primary/double_tap_enabled
     chown system system /sys/devices/platform/soc/990000.i2c/i2c-0/0-005d/touchscreen/primary/double_tap_pressed
     chown system system /sys/devices/platform/soc/990000.i2c/i2c-0/0-005d/touchscreen/primary/udfps_enabled
