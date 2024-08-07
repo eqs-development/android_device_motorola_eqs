@@ -621,12 +621,9 @@ vendor/lib64/libflatbuffers-cpp_vendor.so
 vendor/lib64/libruy_vendor.so
 vendor/lib64/libtextclassifier_hash_vendor.so
 vendor/lib64/libtflite_vendor.so
-vendor/lib64/motorola.hardware.sensors-V1-ndk_platform.so
 vendor/lib64/panel_als_comp_filter_eqs.so
 vendor/lib64/panel_als_comp_filter_eqs_csotc6.so
 vendor/lib64/panel_als_comp_filter_eqs_tianma.so
-vendor/lib64/sensors.moto.so
-vendor/lib64/sensors.ssc.so
 
 # Sensor - configs
 vendor/etc/sensors/als_comp_config.xml
