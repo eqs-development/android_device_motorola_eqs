@@ -95,7 +95,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # Touch
-# PowerShare
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.eqs
 
