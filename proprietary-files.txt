@@ -4,6 +4,17 @@
 vendor/etc/acdbdata/waipio_mtp/MTP_acdb_cal.acdb
 vendor/etc/acdbdata/waipio_mtp/MTP_workspaceFile.qwsp
 
+# ADSP Modules
+vendor/lib/rfsa/adsp/bm2n08.bin
+vendor/lib/rfsa/adsp/bm2n09.bin
+vendor/lib/rfsa/adsp/libadsp_jpege_skel.so
+vendor/lib/rfsa/adsp/libapn_dsp_skel.so
+vendor/lib/rfsa/adsp/libbitml_nsp_skel.so
+vendor/lib/rfsa/adsp/libbitml_nsp_v2_skel.so
+vendor/lib/rfsa/adsp/libcamera_nn_skel.so
+vendor/lib/rfsa/adsp/libhdr_skel.so
+vendor/lib/rfsa/adsp/libmctfengine_skel.so
+
 # Camera
 vendor/bin/hw/vendor.qti.camera.provider@2.7-service_64
 vendor/etc/init/vendor.qti.camera.provider@2.7-service_64.rc
