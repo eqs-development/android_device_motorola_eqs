@@ -46,13 +46,6 @@ on early-boot
     chmod 0664 /sys/class/power_supply/battery/device/force_charging_enable
     chown vendor_tcmd system /sys/class/power_supply/battery/device/force_charging_enable
 
-on post-fs
-    # Sensors
-    chown system system /sys/devices/platform/soc/990000.i2c/i2c-0/0-005d/touchscreen/primary/double_tap_enabled
-    chown system system /sys/devices/platform/soc/990000.i2c/i2c-0/0-005d/touchscreen/primary/double_tap_pressed
-    chown system system /sys/devices/platform/soc/990000.i2c/i2c-0/0-005d/touchscreen/primary/udfps_enabled
-    chown system system /sys/devices/platform/soc/990000.i2c/i2c-0/0-005d/touchscreen/primary/udfps_pressed
-
 on post-fs-data
     # Param updater data for various modules
     mkdir /data/vendor/param 0775 system system
