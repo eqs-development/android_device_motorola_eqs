@@ -36,7 +36,6 @@ $(call inherit-product, device/motorola/sm8475-common/sm8475.mk)
 PRODUCT_PACKAGES += \
     FrameworksResEqs \
     LineageSystemUIEqs \
-    SettingsProviderResEqs \
     SystemUIResEqs
 
 # Audio
