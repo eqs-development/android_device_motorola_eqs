@@ -1,3 +1,11 @@
+# Audio
+vendor.audio.min.dr0=5.0
+vendor.audio.max.dr0=7.5
+vendor.audio.min.dr1=5.0
+vendor.audio.max.dr1=8.0
+vendor.audio.min.temp=20.0
+vendor.audio.max.temp=60.0
+
 # Camera
 persist.vendor.camera.physical.num=4
 
