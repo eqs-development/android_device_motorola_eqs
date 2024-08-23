@@ -36,4 +36,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=eqs_ge \
     PRIVATE_BUILD_DESC="eqs_ge-user 14 U1SQS34.52-21-1-8 ad3814-1af678 release-keys"
 
-BUILD_FINGERPRINT := motorola/eqs_ge/msi:14/U1SQS34.52-21-1-8/ad3814-1af678:user/release-keys
+BUILD_FINGERPRINT := motorola/eqs_ge/eqs:14/U1SQS34.52-21-1-8/ad3814-1af678:user/release-keys
