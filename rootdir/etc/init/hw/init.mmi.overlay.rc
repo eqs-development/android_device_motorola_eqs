@@ -170,13 +170,13 @@ on property:vendor.usb.headset_reset=0
     write /sys/bus/platform/devices/${ro.boot.usb.dwc3_msm:-a600000.ssusb}/mode host
 
 on property:ro.boot.carrier=amxbr
-    setprop ro.vendor.radio.imei.sv 27
+    setprop ro.vendor.radio.imei.sv 29
 
 on property:ro.boot.carrier=retbr
-    setprop ro.vendor.radio.imei.sv 27
+    setprop ro.vendor.radio.imei.sv 29
 
 on property:ro.boot.carrier=tefbr
-    setprop ro.vendor.radio.imei.sv 27
+    setprop ro.vendor.radio.imei.sv 29
 
 on property:ro.boot.carrier=timbr
-    setprop ro.vendor.radio.imei.sv 27
+    setprop ro.vendor.radio.imei.sv 29
