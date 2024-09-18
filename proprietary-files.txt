@@ -53,7 +53,7 @@ vendor/lib64/libSnpeHtpV69Stub.so
 vendor/lib64/liba2d_helper.so
 vendor/lib64/libaidenoiser.so
 vendor/lib64/libaidenoiserv2.so
-vendor/lib64/libancbase_rt_fusion.so
+vendor/lib64/libancbase_rt_fusion.so;FIX_SONAME
 vendor/lib64/libarcsoft_chi_utils.so
 vendor/lib64/libarcsoft_hdr_detection.so
 vendor/lib64/libarcsoft_high_dynamic_range.so
@@ -108,8 +108,8 @@ vendor/lib64/libqll10.so
 vendor/lib64/libqllengine.so
 vendor/lib64/libqshcamera.so
 vendor/lib64/libremosaic_wrapper.so
-vendor/lib64/libremosaiclib_s5khp1.so
-vendor/lib64/libremosaiclib_s5kjn1.so
+vendor/lib64/libremosaiclib_s5khp1.so;FIX_SONAME
+vendor/lib64/libremosaiclib_s5kjn1.so;FIX_SONAME
 vendor/lib64/librmsclib1.so
 vendor/lib64/libsfeShiftExtrapolation.so
 vendor/lib64/libsnpe_dsp_domains_v2.so
