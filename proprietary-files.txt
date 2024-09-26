@@ -325,8 +325,8 @@ vendor/lib64/vendor.egistec.hardware.fingerprint@4.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # HotwordEnrollment
--product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk
--product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk
+product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk
+product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
@@ -337,7 +337,7 @@ product/etc/permissions/deviceowner-configuration-com.motorola.camera3.xml
 product/etc/permissions/privapp-permissions-com.motorola.camera3.xml
 product/etc/sysconfig/hiddenapi-whitelist-com.motorola.camera3.xml
 product/priv-app/MotCamera4/MotCamera4.apk;PRESIGNED
--system/app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
+system/app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
 system/etc/permissions/com.motorola.motosignature.xml
 system/etc/permissions/moto-core_services.xml
 system/etc/permissions/moto-settings.xml
@@ -345,7 +345,7 @@ system/framework/com.motorola.motosignature.jar
 system/framework/moto-core_services.jar
 system/framework/moto-settings.jar
 system_ext/bin/motsettings
--system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk
+system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk
 
 # Moto Permissions
 product/etc/permissions/com.motorola.camera3.xml:vendor/etc/permissions/com.motorola.camera3.xml
@@ -355,14 +355,14 @@ product/etc/permissions/com.motorola.camera3.lens.xml:vendor/etc/permissions/com
 product/etc/permissions/com.motorola.moto-uirefresh.xml
 
 # NFC
--vendor/bin/hw/android.hardware.nfc@1.2-service.st
--vendor/bin/hw/android.hardware.secure_element@1.2-service-gto
+vendor/bin/hw/android.hardware.nfc@1.2-service.st
+vendor/bin/hw/android.hardware.secure_element@1.2-service-gto
 vendor/bin/STFlashTool
 vendor/etc/init/android.hardware.nfc@1.2-service.st.rc:vendor/etc/init/android.hardware.nfc@1.2-service.st-moto.rc
 vendor/etc/init/android.hardware.secure_element@1.2-service-gto.rc:vendor/etc/init/android.hardware.secure_element@1.2-service-gto-moto.rc
--vendor/lib64/android.hardware.secure_element@1.0-impl-gto.so
--vendor/lib64/android.hardware.secure_element@1.1-impl-gto.so
--vendor/lib64/android.hardware.secure_element@1.2-impl-gto.so
+vendor/lib64/android.hardware.secure_element@1.0-impl-gto.so
+vendor/lib64/android.hardware.secure_element@1.1-impl-gto.so
+vendor/lib64/android.hardware.secure_element@1.2-impl-gto.so
 vendor/lib64/libstnfc-auth.so
 vendor/lib64/nfc_nci.st21nfc.st.so
 
